@@ -14,3 +14,17 @@ for (const link of links) {
     nav.classList.remove("show");
   });
 }
+
+// Adiciona sombra no header
+
+const header = document.querySelector("#header");
+const navHeight = header.offsetHeight;
+window.addEventListener("scroll", function () {
+  if (window.scrollY >= navHeight) {
+    // adiciona se o scroll é maior que a altura do header
+    header.classList.add("scroll");
+  } else {
+    // remove se o scroll for menor que a altura do header
+    header.classList.remove("scroll");
+  }
+});
