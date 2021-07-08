@@ -16,7 +16,6 @@ for (const link of links) {
 }
 
 // Adiciona sombra no header
-
 const header = document.querySelector("#header");
 const navHeight = header.offsetHeight;
 window.addEventListener("scroll", function () {
@@ -28,3 +27,5 @@ window.addEventListener("scroll", function () {
     header.classList.remove("scroll");
   }
 });
+
+// Slider Swiper
