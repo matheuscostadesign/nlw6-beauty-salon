@@ -28,4 +28,32 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// Slider Swiper
+// Slider Swiper (Carrousel)
+const swiper = new Swiper(".swiper-container", {
+  slidesPerView: 1,
+  pagination: {
+    el: ".swiper-pagination",
+  },
+  mousewhell: true,
+  keyboard: true,
+});
+
+// Scroll Reveal (animações ao fazer scroll)
+const scrollReveal = ScrollReveal({
+  origin: "top",
+  distance: "30px",
+  duratiom: 700,
+  reset: true,
+});
+// Setando os IDs e classes da página
+scrollReveal.reveal(
+  `#home .image, #home .text,
+  #about .image, #about .text,
+  #services header, #services .card,
+  #testimonials header, #testimonials .testimonials,
+  #contact .text, #contat .links
+  `,
+  {
+    interval: 100,
+  }
+);
