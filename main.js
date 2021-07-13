@@ -15,10 +15,10 @@ for (const link of links) {
   });
 }
 
-// Adiciona sombra no header
-const header = document.querySelector("#header");
-const navHeight = header.offsetHeight;
-window.addEventListener("scroll", function () {
+// Função - Alterar header
+function changeHeaderWhenScroll() {
+  const header = document.querySelector("#header");
+  const navHeight = header.offsetHeight;
   if (window.scrollY >= navHeight) {
     // adiciona se o scroll é maior que a altura do header
     header.classList.add("scroll");
@@ -26,6 +26,22 @@ window.addEventListener("scroll", function () {
     // remove se o scroll for menor que a altura do header
     header.classList.remove("scroll");
   }
+}
+
+// Função - Voltar para o topo
+function backtoTop() {
+  const backToTopButton = document.querySelector(".back-to-top");
+  if (window.scrollY >= 560) {
+    backToTopButton.classList.add("show");
+  } else {
+    backToTopButton.classList.remove("show");
+  }
+}
+
+// Chamada das funções pelo scroll
+window.addEventListener("scroll", function () {
+  changeHeaderWhenScroll();
+  backtoTop();
 });
 
 // Slider Swiper (Carrousel)
@@ -58,14 +74,3 @@ scrollReveal.reveal(
     interval: 100,
   }
 );
-
-// Botão voltar para o topo
-
-const backToTopButton = document.querySelector(".back-to-top");
-window.addEventListener("scroll", function () {
-  if (window.scrollY >= 560) {
-    backToTopButton.classList.add("show");
-  } else {
-    backToTopButton.classList.remove("show");
-  }
-});
