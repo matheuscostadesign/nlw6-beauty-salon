@@ -139,27 +139,6 @@ body {
   width: 100%;
 }
 
-/* Mudanças no header ao fazer scroll */
-
-#header.scroll {
-  background: var(--base-color);
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
-  transition: background 0.2s;
-  border-bottom: none;
-}
-
-#header.scroll .logo span {
-  color: white;
-}
-
-#header.scroll .icon-menu {
-  color: white;
-}
-
-#header.scroll nav ul li a {
-  color: white;
-}
-
 /* Logo */
 
 .logo {
@@ -204,23 +183,25 @@ nav ul li a {
   top: 0;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
   color: var(--base-color);
 }
 
+/* Linha em baixo do menu */
 nav ul li a::after {
   content: "";
   width: 0%;
-  height: 2px;
+  height: 3px;
   background: var(--base-color);
   position: absolute;
   left: 0;
-  bottom: 0;
-  bottom: -1.5rem;
+  bottom: -1.6rem;
   transition: width 0.2s;
 }
 
-nav ul li a:hover::after {
+nav ul li a:hover::after,
+nav ul li a.active::after {
   width: 100%;
 }
 
@@ -590,6 +571,12 @@ footer .social a:hover {
 
   nav .menu ul li a.title {
     font: 400 1rem var(--body-font);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav .menu ul li a.title.active {
+    font-weight: bold;
+    -webkit-font-smoothing: auto;
   }
 
   nav .icon-menu {
@@ -622,6 +609,31 @@ footer .social a:hover {
 
   #home .image img {
     right: 0;
+  }
+
+  /* Mudanças no header ao fazer scroll */
+
+  #header.scroll {
+    background: var(--base-color);
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+    transition: background 0.2s;
+    border-bottom: none;
+  }
+
+  #header.scroll .logo span {
+    color: white;
+  }
+
+  #header.scroll .icon-menu {
+    color: white;
+  }
+
+  #header.scroll nav ul li a {
+    color: white;
+  }
+
+  #header.scroll nav ul li a::after {
+    background: white;
   }
 
   /* About */
