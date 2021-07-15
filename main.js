@@ -52,6 +52,12 @@ const swiper = new Swiper(".swiper-container", {
   },
   mousewhell: true,
   keyboard: true,
+  breakpoints: {
+    767: {
+      slidesPerView: 2,
+      setWrapperSize: true,
+    },
+  },
 });
 
 // Scroll Reveal (animações ao fazer scroll)
