@@ -35,7 +35,7 @@ const swiper = new Swiper(".swiper-container", {
 const scrollReveal = ScrollReveal({
   origin: "top",
   distance: "30px",
-  duratiom: 700,
+  duration: 700,
   reset: true,
 });
 // Setando os IDs e classes da página
